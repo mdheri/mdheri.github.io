@@ -63,10 +63,6 @@
             e.preventDefault(); // prevent the default action (scroll / move caret)
         });
 
-        function onSubmit() {
-            stuff = document.getElementById("form");
-            console.log("stuff");
-        }
     </script>
     <div class="landing-page">
         <section class="hero is-fullheight">
@@ -148,7 +144,7 @@
             
                         <div class="column is-6 my-skills" data-sr-id="1" style="visibility: visible;">
                             <h5 class="title">My Profile</h5>
-                            <p>add text here</p>
+                            <p>I enjoy coding and problem solving.</p>
                             <br>
                             <h5 class="title">My Skills</h5>
                             <div class = content>
@@ -275,7 +271,7 @@
                                     </header>
                                     <div class="card-image">
                                         <figure class="image is-4by3">
-                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                            <img src="stockvue.png" alt="StockVUE Client">
                                         </figure>
                                     </div>
                                     <div class="card-content content">
@@ -302,7 +298,7 @@
                                     </header>
                                     <div class="card-image">
                                         <figure class="image is-4by3">
-                                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                            <img src="LoadVUE 400.png" alt="LoadVUE 400">
                                         </figure>
                                     </div>
                                     <div class="card-content content">
@@ -438,6 +434,86 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <div class="hero">
+                        <div class="columns is-centered">
+                            <div class="column is-one-third">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            Tic-Tac-Toe With unbeatable AI
+                                        </p>
+                                    </header>
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="tictactoe.png" alt="TicTacToe AI">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content content">
+                                        <ul>
+                                            <li>
+                                                Used Mini-Max Algorithm for the AI
+                                            </li>
+                                            <li>
+                                                Game and Logic writing in C++
+                                            </li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class = "column is-one-third">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            Custom Shell
+                                        </p>
+                                    </header>
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="shell.png" alt="Custom Shell">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content content">
+                                        <ul>
+                                            <li>
+                                                A custom shell writen from scratch using C based off the linux shell
+                                            </li>
+                                            <li>
+                                                Handles background process, IO rediections, Pipes, and Signals
+                                            </li>
+                                            <li>
+                                                Used process, and IO redirection using file descriptors
+                                            </li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="column is-one-third">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title">
+                                            Malloc
+                                        </p>
+                                    </header>
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="malloc.jpg" alt="Malloc">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content content">
+                                        <ul>
+                                            <li>
+                                                A custom Malloc function writen from scratch in C
+                                            </li>
+                                            <li>
+                                                Used an explict free list aproach with best-fit search
+                                            </li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -451,7 +527,7 @@
                     <h6 class="has-text-centered has-text-white is-size-2">Do you have an idea or simply want to chat?</h6>
                     <h6 class="has-text-centered has-text-white is-size-2">I'd love to hear from you.</h6>
                 </div>
-                <form id="form" accept-charset="UTF-8" action="https://usebasin.com/f/dc73642ac527" method="POST">
+                <form id="form" accept-charset="UTF-8" action="mailto:mantejdheri@gmail.com" method="POST">
                     <div class="columns is-centered">
                         <div class="column is-half">
                             <div class="field">
@@ -484,7 +560,7 @@
                         <div class="column is-narrow">
                             <div class="field">
                                 <div class="control"></div>
-                                    <button class="button is-medium is-rounded" data-callback="onSubmit">Submit</button>
+                                    <button class="button is-medium is-rounded" value="Send email">Submit</button>
                                 </div>
                             </div>
                         </div>
