@@ -1,0 +1,100 @@
+
+
+#landing-page.hero-body{ 
+    background-image: url(background.jpg) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
+}
+.background-cover{
+    background: rgba(0, 0, 0, 1)
+}
+
+.button{
+    text-align: center;
+    border-color: #ff3860;
+    background-color: transparent;
+    border-width: 1px;
+    color:white;
+}
+
+.button:hover{
+    background-color:#ff3860;
+    border-color: #ff3860;
+    border-width: 1px;
+}
+
+#landing-page.button.is-large {
+    font-size: 1.5rem;
+}
+
+#landing-page.button.is-danger {
+    background-color: transparent;
+    border-color: #ff3860;
+    border-width: 3px;
+    border-radius: 0%;
+    color: #fff;
+    text-align: center;
+    top: 50%;
+    border-style:ridge;
+    width: 20rem;
+}
+
+#hello-world.subtitle{
+    color:#ff3860;
+    font-size: 1.5rem;
+    line-height: 1.265;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+#name-title.title{
+    color:white;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.41;
+    font-family: 'Raleway', sans-serif;
+}
+#about.subtitle{
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: #FFFFFF;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+
+#landing-page.button.is-danger:hover{
+    background-color:#ff3860;
+}
+
+.landing-page{
+    text-align: center;
+} 
+
+
+
+.is-flex.social-connect svg{
+    color: #FFFFFF;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 42px;
+    width: 42px;
+}
+
+.is-flex.social-connect {
+    position: absolute;
+    right: 50%;
+    transform: translate( 50%);
+    padding-top: .75rem;
+}
+
+#contact-text{
+    padding-top: 22px; 
+}
+

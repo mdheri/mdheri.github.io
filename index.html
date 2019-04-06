@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to my Portfolio Website!</title>
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="timeline.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+  <body>
+    <script>
+        pages = ["#landing-page","#about-page","#experience-page","#project-page","#end-page"];
+        $(document).ready(function () {
+        // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1400, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        // window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+        $(document).keydown(function(e) {
+            var page_index = Math.round(window.scrollY/ ($(window).height()));
+            switch(e.which) {
+                case 37: // left
+                    if(page_index - 1 >= 0){
+                        $('html, body').animate({
+                            scrollTop: $(pages[page_index-1]).offset().top
+                        }, 500, function () {});
+                    }
+                    break;
+
+                case 39: // right
+                    if(page_index + 1 < pages.length){
+                        $('html, body').animate({
+                            scrollTop: $(pages[page_index+1]).offset().top
+                        }, 500, function () {});
+                    }
+                    break;
+
+                default: return; // exit this handler for other keys
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+        });
+
+        function onSubmit() {
+            stuff = document.getElementById("form");
+            console.log("stuff");
+        }
+    </script>
+    <div class="landing-page">
+        <section class="hero is-fullheight">
+            <div class="hero-body" id = "landing-page">
+                <div class="container" id = "landing-page">
+                    <h3 class="subtitle" id = "hello-world">
+                        Hello, World!
+                    </h3>
+                    <h1 class="title" id = "name-title">
+                        I'm Mantej Dheri
+                    </h1>
+                    <h2 class="subtitle" id = "about">
+                        Software Developer
+                    </h2>
+                    <a href = "#about-page"><button class="animated fadeIn button is-large is-danger" id="landing-page">
+                        Learn More
+                    </button></a>
+                    <div class="is-flex social-connect">
+                        <a href="https://www.linkedin.com/in/mantej-dheri-b8066b139/" target="_blank">
+                            <svg class="svg-inline--fa fa-linkedin-in fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8S24.1 0 53.8 0s53.8 24.1 53.8 53.8-24.1 54.3-53.8 54.3zM448 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448h-.1z"></path></svg><!-- <i class="fab fa-linkedin-in"></i> -->
+                        </a>
+                        <a href="https://github.com/mdheri" target="_blank">
+                            <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> -->
+                        </a>
+                        <a href="mailto:mantejdheri@gmail.com" target="_blank">
+                            <svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" data-prefix="far" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg><!-- <i class="far fa-envelope"></i> -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="about-page" id = "about-page">
+        <section class="hero is-fullheight">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="content has-text-centered">
+                        <div class="header-intro">
+                            <h5 class = "has-text-bold has-text-danger is-family-sans-serif is-size-4">About</h5>
+                            <h6>Get to know me.</h6>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-6 my-profile" data-sr-id="0" style="visibility: visible;">
+                            <figure class="image is-128x128">
+                                <img class = "is-rounded" src="headshot_square.jpg" alt="Headshot Picture" id=headshot border = '3'>
+                            </figure>
+                            <br>
+                            <ul class="about-list">    
+                                <li>
+                                    <strong>Name:</strong><br>
+                                    <span>Mantej Dheri</span>
+                                </li>
+                                <li>
+                                    <strong>Place of Birth:</strong><br>
+                                    <span>San Jose, CA</span>
+                                </li>
+                                <li>
+                                    <strong>Date of Birth:</strong><br>
+                                    <span>May 1st 1998</span>
+                                </li>
+                                <li>
+                                    <strong>Current Location:</strong><br>
+                                    <span>Irvine, CA</span>
+                                </li>
+                                <li>
+                                    <strong>Current Job:</strong><br>
+                                    <span>Full-Time Student</span>
+                                    <br>
+                                    <span>Part-Time Software Dev/Consultant</span></span>
+                                </li>
+                                <li>
+                                    <strong>Email Address</strong><br>
+                                    <a href="mailto:mantejdheri@gmail.com"><span>mantejdheri@gmail.com</span></a>
+                                </li>
+                            </ul>
+            
+                        </div>
+            
+                        <div class="column is-6 my-skills" data-sr-id="1" style="visibility: visible;">
+                            <h5 class="title">My Profile</h5>
+                            <p>add text here</p>
+                            <br>
+                            <h5 class="title">My Skills</h5>
+                            <p>add text here</p>
+                            <br>
+                            <h5 class="title">Education</h5>
+                            <p>I am currectly a 3rd year student at the University of California, Irvine, majoring in computer science.</p>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="experience-page" id = "experience-page">
+        <section class="hero is-fullheight is-light">
+            <div class="hero-body">
+                <div class="container is-centered">
+                    <div class="content has-text-centered">
+                        <div class="header-intro">
+                            <h5 class = "has-text-bold has-text-danger is-family-sans-serif is-size-4">My Resume</h5>
+                            <h6>My work experience.</h6>
+                        </div>
+                    </div>
+                    <div class="timeline is-centered">               
+                        <div class="timeline-item item-1" data-sr-id="2" style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0s;">
+                            <div class="timeline-marker is-success"></div>
+                            <div class="timeline-content">
+                                <p class="heading is-size-7">June 2018 - Present</p>
+                                <p><strong>Software Developer &amp; Consultant at Loadstar Sensors</strong></p>
+                                <div class = "content">
+                                    <ul>
+                                        <li>Rewrote a majority of the company software to be platform independent using Python and Node.JS</li>
+                                        <li>Created new programs using excel's vba, Python, and Node.JS</li>
+                                        <li>Setup Raspberry Pis and built software specifically for these devices</li>
+                                    </ul>   
+                                </div>
+                            </div>
+                        </div>
+                                                
+                        <div class="timeline-item item-2" data-sr-id="3" style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
+                            <div class="timeline-marker is-danger"></div>
+                            <div class="timeline-content">
+                                <p class="heading is-size-7">January 2018 - April 2018</p>
+                                <p><strong>Apprentence at Portal</strong></p>
+                                <div class = "content" dir = "rtl">
+                                    <ul>
+                                        <li>Working with real companies to build the front and back end for websites and applications</li>
+                                        <li>Improved the existing products and websites</li>
+                                        <li>Trained in HTML, CSS, JS, Node.JS as well as in best practices and conventions for website development</li>
+                                    </ul>   
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item item-3" data-sr-id="4" style="visibility: visible; opacity: 1; transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1) 0.2s;">
+                            <div class="timeline-marker is-danger"></div>
+                            <div class="timeline-content">
+                                <p class="heading is-size-7">June 2016 - September 2016</p>
+                                <p><strong>Indoor Wireman for Cupertino Electice</strong></p>
+                                <div class = "content">
+                                    <ul>
+                                        <li>Did the electrical for the Apple “Spaceship” headquarters</li>
+                                        <li>Bent EMT, ran conduit and wire for high voltage switchgear</li>
+                                        <li>Worked on a data center and server room</li>
+                                    </ul>   
+                                </div>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="project-page" id = "project-page">
+        <section class="hero is-fullheight">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="content has-text-centered">
+                        <div class="header-intro">
+                            <h5 class = "has-text-bold has-text-danger is-family-sans-serif is-size-4">Projects</h5>
+                            <h6>Things I have built</h6>
+                        </div>
+                    </div>
+                
+                    <div class="columns is-centered">
+                        <div class="column">
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        StockVue Client
+                                    </p>
+                                </header>
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="card-content content">
+                                    <ul>
+                                        <li>
+                                            A platform independent desktop application that read data from scales and calculates the inventory of an item                                        
+                                        </li>
+                                        <li>
+                                            Uploads all data to a webservice that communicated with the companies database                                        
+                                        </li>
+                                        <li>
+                                            User friendly GUI built using Tkinter and routines written in Python3                                        
+                                        </li>
+                                    </ul>
+                                </div> 
+                            </div>
+                            <br>
+                            <br>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        UCI Hackathon Investment App
+                                    </p>
+                                </header>
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="stockapp.png" alt="Hack-a-thon Stock App">
+                                    </figure>
+                                </div>
+                                <div class="card-content content">
+                                    <ul>
+                                        <li>
+                                            Investment App that used sentiment analysis to determine if a certain stock was a good buy in
+                                        </li>
+                                        <li>
+                                            Built a custom web crawling library using focused crawling and artificial delays to web scrape for related stocks
+                                        </li>
+                                        <li>
+                                            Utilized Google’s Natural Language API for sentiment analysis and machine learning
+                                        </li>
+                                        <li>
+                                            Web app was created with Ruby on Rails, as well as HTML, CSS, and Javascript
+                                        </li>
+                                    </ul>
+                                </div> 
+                            </div>
+                        </div>        
+                        <div class="column">
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        LoadVUE 4 Channel
+                                    </p>
+                                </header>
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                                    </figure>
+                                </div>
+                                <div class="card-content content">
+                                    <ul>
+                                        <li>
+                                            a 4 channel touch screen display designed specifically for a raspberry pi that reads sensor data from scales                                        
+                                        </li>
+                                    </ul>
+                                </div> 
+                            </div>
+                            <br><br><br>
+                            <br><br><br>
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        CMS Manegment System
+                                    </p>
+                                </header>
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="CMS_website_maker.png" alt="CMS Website Maker">
+                                    </figure>
+                                </div>
+                                <div class="card-content content">
+                                    <ul>
+                                        <li>
+                                            a 4 channel touch screen display designed specifically for a raspberry pi that reads sensor data from scales                                        
+                                        </li>
+                                    </ul>
+                                </div> 
+                            </div>
+
+                        </div>
+
+                        <div class="column">
+                            <div class="card">
+                                <header class="card-header">
+                                    <p class="card-header-title">
+                                        Clone of Twitter
+                                    </p>
+                                </header>
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img src="twitterclone.png" alt="Clone of Twitter">
+                                    </figure>
+                                </div>
+                                <div class="card-content content">
+                                    <ul>
+                                        <li>
+                                            A Node application that displayed tweets and information to a browser client in real time
+                                        </li>
+                                        <li>
+                                            Used socket, sessions, Oauth, ajax calls, and all tweets were stored in a database
+                                        </li>
+                                        <li>
+                                            Written with Node.JS, jQuery, mongoDB
+                                        </li>
+                                    </ul>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="end-page" id = "end-page">
+        <section class="hero has-background-grey-dark has-text-white has-text-bold is-family-monospace">
+            <div class="container">
+                <div class="header-intro">
+                    <h5 class = "has-text-bold has-text-danger is-family-sans-serif is-size-4 has-text-centered is-uppercase" id = "contact-text">Contact</h5>
+                    <h6 class="has-text-centered has-text-white is-size-2">Do you have an idea or simply want to chat?</h6>
+                    <h6 class="has-text-centered has-text-white is-size-2">I'd love to hear from you.</h6>
+                </div>
+                <form id="form" accept-charset="UTF-8" action="https://usebasin.com/f/dc73642ac527" method="POST">
+                    <div class="columns is-centered">
+                        <div class="column is-half">
+                            <div class="field">
+                                <label class="label has-text-white is-size-6">Name</label>
+                                <div class="control is-expanded">
+                                    <input class="input is-medium" name="name" id="name" type="text" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-half">
+                            <div class="field">
+                                <label class="label has-text-white is-size-6">Email</label>
+                                <div class="control is-expanded">
+                                    <input class="input is-medium" type="email" id="email" name="email" required="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns is-centered">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label has-text-white is-size-6">Message</label>
+                                <div class="control is-expanded">
+                                    <textarea class="textarea is-medium" name="comment" rows="5" required=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns is-centered">
+                        <div class="column is-narrow">
+                            <div class="field">
+                                <div class="control"></div>
+                                    <button class="button is-medium is-rounded" data-callback="onSubmit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <footer class="section hero has-background-grey-dark has-text-centered" role="contentInfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+        <div class="container">
+            <div class="social columns is-centered">
+                <div class="column is-narrow">
+                    <a class="button is-medium is-rounded" href="https://www.linkedin.com/in/mantej-dheri-b8066b139" target="_blank">
+                        <svg class="svg-inline--fa fa-linkedin-in fa-w-14" aria-hidden="true" data-prefix="fab" data-icon="linkedin-in" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M100.3 448H7.4V148.9h92.9V448zM53.8 108.1C24.1 108.1 0 83.5 0 53.8S24.1 0 53.8 0s53.8 24.1 53.8 53.8-24.1 54.3-53.8 54.3zM448 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448h-.1z"></path></svg><!-- <i class="fab fa-linkedin-in"></i> -->
+                    </a>
+                </div>
+                <div class="column is-narrow">
+                    <a class="button is-medium is-rounded" href="https://github.com/mdheri" target="_blank">
+                        <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> -->
+                    </a>
+                </div>
+                <div class="column is-narrow">
+                    <a class="button is-medium is-rounded" href="mailto:mantejdheri@gmail.com">
+                        <svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" data-prefix="far" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path></svg><!-- <i class="far fa-envelope"></i> -->
+                    </a>
+                </div>
+            </div>
+            <a href="https://bulma.io"><img src="https://bulma.io/images/made-with-bulma--white.png" alt="Made with Bulma" width="163" height="31"></a>
+    
+        </div>
+    </footer>
+    
+
+
+  </body>
+</html> 
+
